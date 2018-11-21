@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+<link href="images/favicon-2.ico" rel="shortcut icon">
+<link rel="stylesheet" href="style/gallery.css" type="text/css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link id="scrollUpTheme" rel="stylesheet" href="style/image.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+<script>
+$('.parallax-window').parallax({imageSrc:images/picture1-2.jpg});
+</script>
+<script>
+
+            (function ($) {
+                $.getQuery = function (query) {
+                    query = query.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+                    var expr = '[\\?&]' + query + '=([^&#]*)';
+                    var regex = new RegExp(expr);
+                    var results = regex.exec(window.location.href);
+                    if (results !== null) {
+                        return results[1];
+                    } else {
+                        return false;
+                    }
+                };
+            })(jQuery);
+
+            $(function () {
+
+                    $(function () {
+                        $.scrollUp({
+                            animation: 'fade',
+                            scrollImg: {
+                                active: true,
+                                type: 'background',
+                                src: 'images/upred.svg'
+                            }
+                        });
+                    });
+                    $('#scrollUpTheme').attr('href', 'style/image.css?1.1');
+                    $('.image-switch').addClass('active');
+            });
+
+        </script>
+<script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        $('.headerbottom').scrollToFixed();
+        $('.headerbottom').bind('fixed.ScrollToFixed', function() { $(this).css('background-color', '#1A1A1A'); });
+        $('.headerbottom').bind('unfixed.ScrollToFixed', function() { $(this).css('background-color', ''); });
+
+ 
+        // Order matters here because we are dependent on the state of the footer above for
+        // our limit.  The footer must be set first; otherwise, we will not be in the right
+        // position on a window refresh, if the limit is supposed to be invoked.
+        $('#summary').scrollToFixed({
+            marginTop: $('.headerbottom').outerHeight(true) + 10,
+            limit: function() {
+                var limit = $('.footer').offset().top - $('#summary').outerHeight(true) - 10;
+                return limit;
+            },
+            minWidth: 1000,
+            zIndex: 999,
+            fixed: function() {  },
+            dontCheckForPositionFixedSupport: true
+        });
+
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary preUnfixed');
+        });
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary unfixed');
+            $(this).css('background-color', '');
+            $('.headerbottom').trigger('unfixed.ScrollToFixed');
+        });
+        $('#summary').bind('fixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary fixed');
+            $(this).css('background-color', '#1A1A1A');
+            $('.headerbottom').trigger('fixed.ScrollToFixed');
+        });
+    });
+</script>
+</head>
+
+<body>
+  	<div class="parallax-window" data-parallax="scroll" data-image-src="images/picture1-2.jpg">
+    <div class="middle">
+    	<div class="headertop">
+      	<div class="topleft">
+    			<img src="images/logo.png">
+      	</div>
+        <div class="topright">
+       	 <ul>
+        	<li><a href="gallery.html"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          	<li><a href="gallery.html"><i class="fa fa-foursquare" aria-hidden="true"></i></a></li>
+         	<li><a href="gallery.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         	<li><a href="gallery.html"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+         	<li><a href="gallery.html"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+       	 </ul>
+        </div>
+      </div>
+      </div>
+      <div class="headerbottom">
+      <div class="menu">
+        <ul>
+           <li><a href="home.html">HOME</a></li>
+           <li><a href="about.html" >ABOUT</a></li>
+           <li><a href="blog.html">BLOG</a></li>
+           <li><a href="gallery.html" id="we" >GALLERY <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+           		<ul id="submenu">
+                	<li><a href="gallery.html">Masonry style</a></li>
+                    <li><a href="gallery.html">Grid style</a></li>
+                    <li><a href="gallery.html">Justified style</a></li>
+                    <li><a href="gallery.html">List style</a></li>
+                </ul>
+           </li>
+           <li><a href="contact.html">CONTACTS</a></li>
+         </ul>
+       </div>
+       </div>
+    </div> <!--END OF HEADER-->
+    
+    <div class="navigation">
+    	<div class="nav">
+        	<p><a href="home.html">Home</a> &gt; Gallery &gt; Masonry style </p>
+            <hr>
+        </div>
+    </div>
+    <div class="article">
+        <div class="filter">
+        	<ul>
+            	<li><a href="gallery.html" id="show">SHOW ALL <hr> </a></li>
+                <li><a href="gallery.html">CONSULTING <hr> </a></li>
+                <li><a href="gallery.html">EDUCATION <hr> </a></li>
+                <li><a href="gallery.html">INNOVATION <hr> </a></li>
+            </ul>
+        </div>
+        <div class="content">
+        	<div class="imgtop">
+            	<div class="img">
+                	<img src="images/folio_1000-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Image Format</a></h3>
+                        <p>This format perfectly fits in...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/folio_1002-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Gallery Format</a></h3>
+                        <p>This format can be used...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/folio_1001-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Video Format</a></h3>
+                        <p>If your post contains video,...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="imgmiddle">
+            	<div class="img">
+                	<img src="images/folio_1003-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Audio Format</a></h3>
+                        <p>If your post contains audio,...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/folio_1004-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Branding</a></h3>
+                        <p>This product will spark your...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/folio_1005-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Consulting</a></h3>
+                        <p>This original product provides the....</p>
+                    </div>
+                </div>
+            </div>
+            <div class="imgbottom">
+            	<div class="img">
+                	<img src="images/folio_1009-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Customer Service</a></h3>
+                        <p>Consider this product. Is there...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/folio_1006-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Ethics</a></h3>
+                        <p>Did you know that not...</p>
+                    </div>
+                </div>
+                <div class="img">
+                	<img src="images/post1500-370x325.jpg">
+                	<div class="label">
+                    	<i class="fa fa-search" aria-hidden="true"></i>
+                        <h3><a href="gallery.html">Franchising</a></h3>
+                        <p>This product will spark your...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page">
+        	<a href="gallery.html" class="button" id="we">1</a>
+            <a href="gallery.html" class="button">2</a>
+            <a href="gallery.html" class="button" id="right">&gt;</a>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<p><a href="gallery.html">Education &copy; 2016 • Privacy Policy</a></p>
+    </div>
+</body>
+</html>

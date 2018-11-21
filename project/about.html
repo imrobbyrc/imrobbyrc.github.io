@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About</title>
+<link href="images/favicon-2.ico" rel="shortcut icon">
+<link rel="stylesheet" href="style/about.css" type="text/css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link id="scrollUpTheme" rel="stylesheet" href="style/image.css">
+<link rel="stylesheet" href="style/animate.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+<script>
+$('.parallax-window').parallax({imageSrc:images/picture1-2.jpg});
+</script>
+<script>
+
+            (function ($) {
+                $.getQuery = function (query) {
+                    query = query.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+                    var expr = '[\\?&]' + query + '=([^&#]*)';
+                    var regex = new RegExp(expr);
+                    var results = regex.exec(window.location.href);
+                    if (results !== null) {
+                        return results[1];
+                    } else {
+                        return false;
+                    }
+                };
+            })(jQuery);
+
+            $(function () {
+
+                    $(function () {
+                        $.scrollUp({
+                            animation: 'fade',
+                            scrollImg: {
+                                active: true,
+                                type: 'background',
+                                src: 'images/upred.svg'
+                            }
+                        });
+                    });
+                    $('#scrollUpTheme').attr('href', 'style/image.css?1.1');
+                    $('.image-switch').addClass('active');
+            });
+
+        </script>
+ <script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        $('.headerbottom').scrollToFixed();
+        $('.headerbottom').bind('fixed.ScrollToFixed', function() { $(this).css('background-color', '#1A1A1A'); });
+        $('.headerbottom').bind('unfixed.ScrollToFixed', function() { $(this).css('background-color', ''); });
+
+ 
+        // Order matters here because we are dependent on the state of the footer above for
+        // our limit.  The footer must be set first; otherwise, we will not be in the right
+        // position on a window refresh, if the limit is supposed to be invoked.
+        $('#summary').scrollToFixed({
+            marginTop: $('.headerbottom').outerHeight(true) + 10,
+            limit: function() {
+                var limit = $('.footer').offset().top - $('#summary').outerHeight(true) - 10;
+                return limit;
+            },
+            minWidth: 1000,
+            zIndex: 999,
+            fixed: function() {  },
+            dontCheckForPositionFixedSupport: true
+        });
+
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary preUnfixed');
+        });
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary unfixed');
+            $(this).css('background-color', '');
+            $('.headerbottom').trigger('unfixed.ScrollToFixed');
+        });
+        $('#summary').bind('fixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary fixed');
+            $(this).css('background-color', '#1A1A1A');
+            $('.headerbottom').trigger('fixed.ScrollToFixed');
+        });
+    });
+</script>
+<script src="js/wow.min.js"></script>
+ <script>
+	new WOW().init();
+</script>
+              
+</head>
+
+<body>
+  	<div class="parallax-window" data-parallax="scroll" data-image-src="images/picture1-2.jpg">
+    <div class="middle">
+    	<div class="headertop">
+      	<div class="topleft">
+    			<img src="images/logo.png">
+      	</div>
+        <div class="topright">
+       	 <ul>
+        	<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          	<li><a href=""><i class="fa fa-foursquare" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+       	 </ul>
+        </div>
+      </div>
+     </div>
+      <div class="headerbottom">
+      <div class="menu">
+        <ul>
+           <li><a href="home.html">HOME</a></li>
+           <li><a href="about.html"  id="we">ABOUT</a></li>
+           <li><a href="blog.html">BLOG</a></li>
+           <li><a href="gallery.html" id="background">GALLERY <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+           		<ul id="submenu">
+                	<li><a href="">Masonry style</a></li>
+                    <li><a href="">Grid style</a></li>
+                    <li><a href="">Justified style</a></li>
+                    <li><a href="">List style</a></li>
+                </ul>
+           </li>
+           <li><a href="contact.html">CONTACTS</a></li>
+         </ul>
+       </div>
+       </div>
+    </div> <!--END OF HEADER-->
+    
+    <div class="article">
+    	<div class="nav">
+        	<p><a href="home.html">Home</a> &gt; About </p>
+            <hr>
+        </div>
+        <div class="content">
+        	<h1>About education</h1>
+            <hr>
+            <div class="content1">
+            	<img src="images/page2_pic1.jpg">
+                <div class="wow fadeInLeftBig contentleft">
+                	<p>Education is of great importance for every single person. It goes without saying that it has a positive effect on everyone individually and the entire nations. It doesn’t matter when you begin studying. Everyone from the kindergarten to the adult age can start gaining new knowledge and skills in any possible field. Also, you can have a lot of fun when learning. For instance, you can study foreign languages while listening to songs or simply watching television. Studies show that interactive learning is more effective than just sitting in a classroom and reading a book.</p>
+                 </div>
+                 <div class="wow fadeIn contentleft">
+                    <p>Educated people get more civilized.  A man with the knowledge that covers different fields is more communicative and can find the common language with new acquaintances much faster. What’s more, the areas where residents can gain proper education, become more prosperous. It’s no secret that everything is interconnected in this world. The nation’s economical success is heavily dependent on the educational attainment of its citizens. Scientists develop gadgets and equipment that results in the high level of technological success.</p>
+                </div>
+                <div class="wow fadeInRightBig contentright">
+                	<p>Today, we are free to decide on where to study on our own. There are so many international and exchange programs offering foreign students to study in a different country. By living abroad for a year or two (depending on the program that one has chosen) a person can learn the culture of a different nation and assimilate. Thus, young specialists can find job in the country where they study and share their knowledge with international colleagues.
+</p>
+                </div>
+            </div>
+            <div class="content2">
+            	<h1>Why choose us</h1>
+                <hr>
+                <div class="images">
+                	<div class="imgtop">
+                    	<div class="wow fadeInDown images1">
+                        	<img src="images/post19-1-370x354.jpg">
+                            <div class="label" id="posisi">
+            					<h3><a href="">Pre-college education</a></h3>
+            					<p>Broaden the creative horizons of your kids</p>
+                			</div>
+                        </div>
+                 		<div class="wow fadeInUp images1">
+                        	<img src="images/post20-370x354.jpg">
+                            <div class="label" id="poisi2">
+            					<h3><a href="">Middle School</a></h3>
+            					<p>Children will deepen the knowledge and skills they obtained in the elementary school</p>
+                			</div>
+                        </div>
+                        <div class="wow fadeInDown images1">
+                        	<img src="images/post21-370x354.jpg">
+                            <div class="label" id="poisi3">
+            					<h3><a href="">High School</a></h3>
+            					<p>Preparing youngsters for the adult life</p>
+                			</div>
+                        </div>
+                    
+                    </div>
+                    <div class="imgbottom">
+                    	<div class="wow fadeInDown images1">
+                        	<img src="images/post23-370x354.jpg">
+                            <div class="label" id="posisi">
+            					<h3><a href="">International exchange</a></h3>
+            					<p>Accepting students from abroad</p>
+                			</div>
+                        </div>
+                 		<div class="wow fadeInUp images1">
+                        	<img src="images/post24-370x354.jpg">
+                            <div class="label" id="poisi2">
+            					<h3><a href="">Graduate programs</a></h3>
+            					<p>Solidifying knowledge that was obtained through 
+                                the long years of learning</p>
+                			</div>
+                        </div>
+                        <div class="wow fadeInDown images1">
+                        	<img src="images/post22-370x354.jpg">
+                            <div class="label" id="poisi3">
+            					<h3><a href="">Home education</a></h3>
+            					<p>Providing robust distant education</p>
+                			</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    	<div class="content3">
+        	<div class="wow bounceIn gambar">
+            	<div class="img1">
+                	<div class="gambar1">
+                	<img src="images/post_team_1-370x339.jpg">
+                    </div>
+                    	<div class="cont">
+                            <h3><a href="">Our mission <hr></a></h3>
+                			<p>We transform students, schools, and communities through professional preparation, collaborative partnerships, and the translation of research into action. </p>
+                        </div>
+                </div>
+                <div class="img1">
+                	<div class="gambar1">
+                	<img src="images/post_team_2-370x339.jpg">
+                    </div>
+                    	<div class="cont">
+                            <h3><a href="">Our vision <hr></a></h3>
+                            <p>We strive for being a model of excellence for solving complex educational problems through innovative and participatory teaching, scholarship, and community engagement.</p>
+                        </div>
+                </div>
+                <div class="img1">
+                	<div class="gambar1">
+                	<img src="images/post_team_3-370x339.jpg">
+                    </div>
+                    	<div class="cont">
+                            <h3><a href="">Our values <hr></a></h3>
+                            <p>We are dedicated to helping you achieve your goals using our flexible programs tailored to suit individual needs.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    </div> <!--END OF CONTENT-->
+    <div class="footer">
+    	<p><a href="">Education &copy; 2016 • Privacy Policy</a></p>
+    </div>
+    
+</body>
+</html>

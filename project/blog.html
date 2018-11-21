@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Blog</title>
+<link href="images/favicon-2.ico" rel="shortcut icon">
+<link rel="stylesheet" href="style/blog.css" type="text/css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link id="scrollUpTheme" rel="stylesheet" href="style/image.css">
+<link rel="stylesheet" href="style/animate.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+<script>
+$('.parallax-window').parallax({imageSrc:images/picture1-2.jpg});
+</script>
+<script src="js/wow.min.js"></script>
+ <script>
+ 	new WOW().init();
+ </script>
+<script>
+
+            (function ($) {
+                $.getQuery = function (query) {
+                    query = query.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+                    var expr = '[\\?&]' + query + '=([^&#]*)';
+                    var regex = new RegExp(expr);
+                    var results = regex.exec(window.location.href);
+                    if (results !== null) {
+                        return results[1];
+                    } else {
+                        return false;
+                    }
+                };
+            })(jQuery);
+
+            $(function () {
+
+                    $(function () {
+                        $.scrollUp({
+                            animation: 'fade',
+                            scrollImg: {
+                                active: true,
+                                type: 'background',
+                                src: 'images/upred.svg'
+                            }
+                        });
+                    });
+                    $('#scrollUpTheme').attr('href', 'style/image.css?1.1');
+                    $('.image-switch').addClass('active');
+            });
+
+        </script>
+<script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        $('.headerbottom').scrollToFixed();
+        $('.headerbottom').bind('fixed.ScrollToFixed', function() { $(this).css('background-color', '#1A1A1A'); });
+        $('.headerbottom').bind('unfixed.ScrollToFixed', function() { $(this).css('background-color', ''); });
+
+ 
+        // Order matters here because we are dependent on the state of the footer above for
+        // our limit.  The footer must be set first; otherwise, we will not be in the right
+        // position on a window refresh, if the limit is supposed to be invoked.
+        $('#summary').scrollToFixed({
+            marginTop: $('.headerbottom').outerHeight(true) + 10,
+            limit: function() {
+                var limit = $('.footer').offset().top - $('#summary').outerHeight(true) - 10;
+                return limit;
+            },
+            minWidth: 1000,
+            zIndex: 999,
+            fixed: function() {  },
+            dontCheckForPositionFixedSupport: true
+        });
+
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary preUnfixed');
+        });
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary unfixed');
+            $(this).css('background-color', '');
+            $('.headerbottom').trigger('unfixed.ScrollToFixed');
+        });
+        $('#summary').bind('fixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary fixed');
+            $(this).css('background-color', '#1A1A1A');
+            $('.headerbottom').trigger('fixed.ScrollToFixed');
+        });
+    });
+</script>
+</head>
+
+<body>
+  	<div class="parallax-window" data-parallax="scroll" data-image-src="images/picture1-2.jpg">
+    <div class="middle">
+    	<div class="headertop">
+      	<div class="topleft">
+    			<img src="images/logo.png">
+      	</div>
+        <div class="topright">
+       	 <ul>
+        	<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          	<li><a href=""><i class="fa fa-foursquare" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+       	 </ul>
+        </div>
+      </div>
+      </div>
+      <div class="headerbottom">
+      <div class="menu">
+        <ul>
+           <li><a href="home.html">HOME</a></li>
+           <li><a href="about.html">ABOUT</a></li>
+           <li><a href="blog.html"  id="we">BLOG</a></li>
+           <li><a href="gallery.html" id="background">GALLERY <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+           		<ul id="submenu">
+                	<li><a href="">Masonry style</a></li>
+                    <li><a href="">Grid style</a></li>
+                    <li><a href="">Justified style</a></li>
+                    <li><a href="">List style</a></li>
+                </ul>
+           </li>
+           <li><a href="contact.html">CONTACTS</a></li>
+         </ul>
+       </div>
+       </div>
+    </div> <!--END OF HEADER-->
+	<div class="article">
+    	<div class="nav">
+        	<p><a href="home.html">Home</a> &gt; Blog </p>
+            <hr>
+        </div>
+        <div class="container">
+        <div class="wow fadeInRightBig content">
+        	<img src="images/post_team_1-1170x339.jpg">
+            <div class="ket">
+            	<h5>January 15, 2016</h5>
+                <h3><a href="">Our mission</a></h3>
+                <p>We transform students, schools, and communities through professional preparation, collaborative partnerships, and the translation of research into action. </p>
+            </div>
+            <div class="tombol">
+            <a href="" class="button">Read More</a>
+            </div>
+        </div>
+        <div class="wow fadeInLeftBig content">
+        	<img src="images/post_team_2-1170x339.jpg">
+            <div class="ket">
+            	<h5>January 15, 2016</h5>
+                <h3><a href="">Our vision</a></h3>
+                <p>We strive for being a model of excellence for solving complex educational problems through innovative and participatory teaching, scholarship, and community engagement.</p>
+            </div>
+            <div class="tombol">
+            <a href="" class="button">Read More</a>
+            </div>
+        </div>
+        <div class="wow fadeInRightBig content">
+        	<img src="images/post_team_3-1170x339.jpg">
+            <div class="ket">
+            	<h5>January 15, 2016</h5>
+                <h3><a href="">Our values</a></h3>
+                <p>We are dedicated to helping you achieve your goals using our flexible programs tailored to suit individual needs.</p>
+            </div>
+            <div class="tombol">
+            <a href="" class="button">Read More</a>
+            </div>
+        </div>
+        <div class="wow fadeInLeftBig content" id="content1">
+        	<img src="images/post19-1-1170x505.jpg">
+            <div class="ket">
+                <h3><a href="">Pre-college education</a></h3>
+                <p>Broaden the creative horizons of your kids</p>
+            </div>
+            <div class="tombol">
+            <a href="" class="button">Read More</a>
+            </div>
+        </div>
+        <div class="wow fadeInRightBig content" id="content1">
+        	<img src="images/post20-1170x505.jpg">
+            <div class="ket">
+                <h3><a href="">Middle school</a></h3>
+                <p>Children will deepen the knowledge and skills they obtained in the elementary school</p>
+            </div>
+            <div class="tombol">
+            <a href="" class="button">Read More</a>
+            </div>
+        </div>
+        <div class="page">
+        	<a href="" class="button" id="we">1</a>
+            <a href="" class="button">2</a>
+            <a href="" class="button">3</a>
+            <a href="" class="button">...</a>
+            <a href="" class="button">6</a>
+            <a href="" class="button">&gt;</a>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<p><a href="">Education &copy; 2016 • Privacy Policy</a></p>
+    </div>
+</body>
+</html>

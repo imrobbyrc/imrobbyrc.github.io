@@ -1,0 +1,9 @@
+/* Image style */
+#scrollUp {
+    background-image:url(../images/upred.svg);
+    bottom: 20px;
+    right: 20px;
+    width: 64px;    /* Width of image */
+    height: 64px;   /* Height of image */
+	transition: all 0.3s ease;
+}#scrollUp:hover {background-image:url(../images/upblack.svg)}

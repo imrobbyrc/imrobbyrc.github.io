@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contacts</title>
+<link href="images/favicon-2.ico" rel="shortcut icon">
+<link rel="stylesheet" href="style/contact.css" type="text/css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link id="scrollUpTheme" rel="stylesheet" href="style/image.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+<script>
+$('.parallax-window').parallax({imageSrc:images/picture1-2.jpg});
+</script>
+<script>
+
+            (function ($) {
+                $.getQuery = function (query) {
+                    query = query.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+                    var expr = '[\\?&]' + query + '=([^&#]*)';
+                    var regex = new RegExp(expr);
+                    var results = regex.exec(window.location.href);
+                    if (results !== null) {
+                        return results[1];
+                    } else {
+                        return false;
+                    }
+                };
+            })(jQuery);
+
+            $(function () {
+
+                    $(function () {
+                        $.scrollUp({
+                            animation: 'fade',
+                            scrollImg: {
+                                active: true,
+                                type: 'background',
+                                src: 'images/upred.svg'
+                            }
+                        });
+                    });
+                    $('#scrollUpTheme').attr('href', 'style/image.css?1.1');
+                    $('.image-switch').addClass('active');
+            });
+
+</script>
+<script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        $('.headerbottom').scrollToFixed();
+        $('.headerbottom').bind('fixed.ScrollToFixed', function() { $(this).css('background-color', '#1A1A1A'); });
+        $('.headerbottom').bind('unfixed.ScrollToFixed', function() { $(this).css('background-color', ''); });
+
+ 
+        // Order matters here because we are dependent on the state of the footer above for
+        // our limit.  The footer must be set first; otherwise, we will not be in the right
+        // position on a window refresh, if the limit is supposed to be invoked.
+        $('#summary').scrollToFixed({
+            marginTop: $('.headerbottom').outerHeight(true) + 10,
+            limit: function() {
+                var limit = $('.footer').offset().top - $('#summary').outerHeight(true) - 10;
+                return limit;
+            },
+            minWidth: 1000,
+            zIndex: 999,
+            fixed: function() {  },
+            dontCheckForPositionFixedSupport: true
+        });
+
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary preUnfixed');
+        });
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary unfixed');
+            $(this).css('background-color', '');
+            $('.headerbottom').trigger('unfixed.ScrollToFixed');
+        });
+        $('#summary').bind('fixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary fixed');
+            $(this).css('background-color', '#1A1A1A');
+            $('.headerbottom').trigger('fixed.ScrollToFixed');
+        });
+    });
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCVbRu69JBL_oNSrULDjB3Puslk9zV9UV4 "></script>
+<script type="text/javascript" src="js/jquery.googlemap.js"></script>
+</head>
+
+<body>
+  	<div class="parallax-window" data-parallax="scroll" data-image-src="images/picture1-2.jpg">
+    <div class="middle">
+    	<div class="headertop">
+      	<div class="topleft">
+    			<img src="images/logo.png">
+      	</div>
+        <div class="topright">
+       	 <ul>
+        	<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          	<li><a href=""><i class="fa fa-foursquare" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+       	 </ul>
+        </div>
+      </div>
+      </div>
+      <div class="headerbottom">
+      <div class="menu">
+        <ul>
+           <li><a href="home.html">HOME</a></li>
+           <li><a href="about.html">ABOUT</a></li>
+           <li><a href="blog.html">BLOG</a></li>
+           <li><a href="gallery.html" id="background">GALLERY <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+           		<ul id="submenu">
+                	<li><a href="">Masonry style</a></li>
+                    <li><a href="">Grid style</a></li>
+                    <li><a href="">Justified style</a></li>
+                    <li><a href="">List style</a></li>
+                </ul>
+           </li>
+           <li><a href=""  id="we">CONTACTS</a></li>
+         </ul>
+       </div>
+       </div>
+    </div> <!--END OF HEADER-->
+    <div class="navigation">
+    	<div class="nav">
+        	<p><a href="home.html">Home</a> &gt; Contacts </p>
+            <hr>
+        </div>
+    </div>
+    <div class="maps">
+        	<div id="map" style="width: 100%; height: 500px;"></div>
+			<script type="text/javascript">
+			 $(function() {
+ 			 $("#map").googleMap({
+  			 zoom: 10, // Initial zoom level (optional)
+   			 coords: [-6.1782599,106.7639031], // Map center (optional)
+    		 type: "ROADMAP" // Map type (optional)
+   				 });
+ 		 	 })
+		    </script>
+    </div>
+    <div id="contact">
+    	<h1>Contact Information</h1>
+        <hr>
+        	<div class="hub">
+            	<div class="house">
+                	<i class="fa fa-home" aria-hidden="true"></i>
+                    <p><a href="">9863 – 9867 Mill Road,
+                    Cambridge, MG09 99HT</a></p>
+                </div>
+                <div class="phone">
+                	<i class="fa fa-mobile" aria-hidden="true"></i>
+                    <p><a href="">+1 800 603 6035</a></p>
+                </div>
+                <div class="mail">
+                	<i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <p><a href="">mail@demolink.org</a></p>
+                </div>
+             </div>
+     </div> <!--END OF contact-->
+     <div id="contactus">
+    	<h1>Contact Us</h1>
+        <hr>
+        <form>
+        	<input type="text" name="name" placeholder="Name :">
+            <input type="email" name="email" placeholder="Email :">
+            <input type="text" name="phone" placeholder="Phone :">
+            <textarea name="" rows="10" placeholder="message :"></textarea>
+            <div id="button">
+            <input type="Submit" value="Send">
+            <input type="Submit" value="Clear">
+            </div>
+        </form>
+     </div>
+     <div class="footer">
+    	<p><a href="">Education &copy; 2016 • Privacy Policy</a></p>
+    </div> <!--END OF footer-->
+</body>
+</html>

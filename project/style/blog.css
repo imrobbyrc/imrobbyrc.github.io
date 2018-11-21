@@ -1,0 +1,251 @@
+* {padding:0; margin:0}
+
+/*HEADER*/
+.parallax-window {
+	height:350px
+	}
+	
+.middle {
+	width:1200px ; 
+	margin:auto; 
+	position:relative;
+	padding-bottom:20px;
+	}
+	
+.headertop {
+	overflow:hidden ; 
+	border-bottom:2px solid #FFF; 
+	padding-bottom:15px ; 
+	padding-top:100px;
+	}
+.topleft {
+	float:left; 
+	width:400px
+	}
+.topright {
+	float:right; 
+	width:400px
+	}
+.topright ul {
+	float:right ;
+	list-style:none ;
+	padding-top:33px
+	}
+.topright ul li {
+	float:left ;
+	padding: 0 10px
+	}
+.topright ul li a {
+	color:#FFF
+	}
+.topright ul li a:hover {
+	color:#ff4754
+	}
+.headerbottom {
+	width:100%;
+	height:68px;
+	}
+.menu {
+	width :700px;
+	margin :auto;
+	text-align:center;
+	padding:10px 0 50px; 
+	}
+.menu ul {
+	list-style:none ;
+	}
+.menu ul li {
+	float:left ; 
+	padding: 0 10px;
+	position:relative;
+	}
+.menu ul li a {
+	color:#FFF; 
+	text-decoration:none; 
+	padding:13px 18px ;
+	display:inline-block; 
+	font-family:sans-serif, roboto ;
+	font-size:15px;
+	letter-spacing:2px ;
+	border-radius:20px;
+	}
+.menu ul li a:hover {
+	background-color:#ff4754; 
+	transition:all 0.3s ease;
+	}
+.menu ul li #we {
+	border-radius:20px ;
+	padding:13px 18px !important;
+	background-color:#ff4754
+	}
+	
+.menu ul li ul {
+	position:absolute;
+	top:45px;
+	left:8px;
+	background-color:#FFFFFF;
+	border-radius:25px;
+	width: 225px;
+	padding:30px 0;
+	transition:opacity 0.4s ease-in-out 0s;
+	opacity:0;
+	box-shadow:2px 2px 5px #4A4A4A;
+	visibility:hidden;
+	}
+.menu ul li:hover ul {
+	visibility:visible;
+	opacity:1;
+	}
+.menu ul li #submenu a {
+	display:inline-block;
+	color:#000000 !important;
+	transition:0.3s ease-in-out;
+	font-size:15px;
+	text-transform:uppercase;
+	}
+.menu ul li #submenu a:hover{
+	color:#ff4754 !important;
+	background-color:#fff;
+	}
+.menu ul li:hover #background {
+	background-color:#FF4754
+	}
+/*ARTICLE*/
+.article {
+	padding-top:50px;
+	}
+.article .nav {
+	background-color:#FFF;
+	color: #464949;
+    font: italic 14px/18px Roboto,sans-serif
+	}
+.article .nav p {
+	text-align:center;
+	font-style:italic
+	}
+.article .nav a {
+	color:#ff4754;
+	text-decoration:none;
+	font-style:italic;
+	transition:0.3s ease-in-out;
+	}
+.article .nav a:hover {
+	color:#1b1b1b;
+	}
+.article .nav hr {
+	width:180px;
+	border:none;
+	text-align:center;
+	background-color:#BFBFBF;
+	margin:auto;
+	padding:0.5px;
+	}
+/*CONTENT*/
+.container {
+	overflow:hidden;
+	margin:auto;
+	padding:100px 0;
+	border-bottom:2px solid #B5B5B5;
+	}
+.content {
+	width:1200px;
+	margin:auto;
+	padding-top:100px;
+	overflow:hidden;
+	}
+.page {
+	width:1200px;
+	margin:auto;
+	padding-top:100px;
+	overflow:hidden;
+	}
+.content img {
+	float:left;
+	width:1020px;
+	}
+.content .ket {
+	float:right;
+	width:150px;
+	overflow:hidden;
+	}
+#content1 img {
+	width:1200px;
+	}
+#content1 .ket {
+	width:400px;
+	float:none;
+	}
+.content .ket h5 {
+	color:#B8B8B8 ;
+	font-style:italic ;
+	}
+.content .ket h3 { 
+	padding-top:20px
+	}
+.content .ket a {
+	color:#2a2d2d; 
+	text-decoration:none ; 
+	font-family:righteous ; 
+	font-size:22px
+	}
+.content .ket a:hover {
+	color:#ff4754 ; 
+	transition:all 0.5s ease
+	}
+.content .ket p {
+	color: #2a2d2d;
+    font: 300 15px/22px Roboto;
+	font-size:16px;
+	letter-spacing: -0.2px;  
+	padding-top:10px
+	}
+.content .tombol {
+	width:1200px;
+	float:left;
+	margin-top:80px;
+	}
+.content .tombol .button {
+	background-color:#FF4C4F ; 
+	border-radius:35px ;
+	padding:20px 45px; 
+	text-decoration:none ;
+	color:#FFF; 
+	font-size:14px;
+	display:inline-block;
+	transition:all 0.3s ease;
+	}
+.content .tombol .button:hover {
+	background-color:#222222; 
+	}
+.page .button {
+	background-color:#777777 ; 
+	border-radius:50px ;
+	padding:20px 25px; 
+	text-decoration:none ;
+	color:#FFF; 
+	font-size:14px;
+	display:inline-block;
+	margin-right:10px;
+	transition:all 0.3s ease;
+	}
+.page .button:hover {
+	background-color:#FF4C4F;
+	}
+.page #we {
+	background-color:#ff4754
+	}
+	
+/*FOOTER*/
+.footer {
+	background-color:#fff;
+	height:200px;
+	line-height:200px;
+	}
+.footer p {
+	text-align:center;
+	}
+.footer a {
+	text-decoration:none;
+	color:#BDBDBD;
+	font-size:16px;
+	}

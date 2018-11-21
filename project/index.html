@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Education</title>
+<link href="images/favicon-2.ico" rel="shortcut icon">
+<link rel="stylesheet" href="style/home.css" type="text/css">
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link id="scrollUpTheme" rel="stylesheet" href="style/image.css">
+<link rel="stylesheet" href="style/animate.css">
+<link rel="stylesheet" href="style/owl.carousel.css">
+<link rel="stylesheet" href="style/owl.theme.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        $('.headerbottom').scrollToFixed();
+        $('.headerbottom').bind('fixed.ScrollToFixed', function() { $(this).css('background-color', '#1A1A1A'); });
+        $('.headerbottom').bind('unfixed.ScrollToFixed', function() { $(this).css('background-color', ''); });
+
+ 
+        // Order matters here because we are dependent on the state of the footer above for
+        // our limit.  The footer must be set first; otherwise, we will not be in the right
+        // position on a window refresh, if the limit is supposed to be invoked.
+        $('#summary').scrollToFixed({
+            marginTop: $('.headerbottom').outerHeight(true) + 10,
+            limit: function() {
+                var limit = $('.footer').offset().top - $('#summary').outerHeight(true) - 10;
+                return limit;
+            },
+            minWidth: 1000,
+            zIndex: 999,
+            fixed: function() {  },
+            dontCheckForPositionFixedSupport: true
+        });
+
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary preUnfixed');
+        });
+        $('#summary').bind('unfixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary unfixed');
+            $(this).css('background-color', '');
+            $('.headerbottom').trigger('unfixed.ScrollToFixed');
+        });
+        $('#summary').bind('fixed.ScrollToFixed', function() {
+            if (window.console) console.log('summary fixed');
+            $(this).css('background-color', '#1A1A1A');
+            $('.headerbottom').trigger('fixed.ScrollToFixed');
+        });
+    });
+</script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+<script>
+$('.parallax-window').parallax({imageSrc:images/picture2-2.jpg});
+</script>
+<script src="js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+
+      navigation : false,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+</script>
+<script src="js/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script> 
+<script>
+
+            (function ($) {
+                $.getQuery = function (query) {
+                    query = query.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+                    var expr = '[\\?&]' + query + '=([^&#]*)';
+                    var regex = new RegExp(expr);
+                    var results = regex.exec(window.location.href);
+                    if (results !== null) {
+                        return results[1];
+                    } else {
+                        return false;
+                    }
+                };
+            })(jQuery);
+
+            $(function () {
+
+                    $(function () {
+                        $.scrollUp({
+                            animation: 'fade',
+							scrollImg: {
+                                active: true,
+                                type: 'background',
+                                src: 'images/upred.svg',
+                            }
+                        });
+                    });
+                    $('#scrollUpTheme').attr('href', 'style/image.css?1.1');
+                    $('.image-switch').addClass('active');
+            });
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCVbRu69JBL_oNSrULDjB3Puslk9zV9UV4 "></script>
+<script type="text/javascript" src="js/jquery.googlemap.js"></script>
+</head>
+
+<body>
+  	<div class="parallax-window" data-parallax="scroll" data-image-src="images/picture2-2.jpg">
+    <div class="middle">
+    	<div class="headertop">
+      	<div class="topleft">
+    			<img src="images/logo.png">
+      	</div>
+        <div class="topright">
+       	 <ul>
+        	<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          	<li><a href=""><i class="fa fa-foursquare" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+         	<li><a href=""><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+       	 </ul>
+        </div>
+      </div>
+    </div>
+    <div class="headerbottom">
+      <div class="menu">
+        <ul>
+           <li><a href="home.html" id="we">HOME</a></li>
+           <li><a href="about.html">ABOUT</a></li>
+           <li><a href="blog.html">BLOG</a></li>
+           <li><a href="gallery.html" id="background">GALLERY <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+           		<ul id="submenu">
+                	<li><a href="">Masonry style</a></li>
+                    <li><a href="">Grid style</a></li>
+                    <li><a href="">Justified style</a></li>
+                    <li><a href="">List style</a></li>
+                </ul>
+           </li>
+           <li><a href="contact.html">CONTACTS</a></li>
+         </ul>
+       </div>
+       </div>
+       <div class="middle" id="center">
+       <div id="owl-demo" class="owl-carousel owl-theme">
+       	<div class="item">
+       		<h1 class="wow fadeInDownBig">There is no excess education!</h1>
+       		<p class="wow fadeInUpBig">any successful career starts with good education</p>
+       	</div>
+       	<div class="tem">
+       		<h1 class="wow fadeInDownBig">It's never too late to study!</h1>
+       		<p class="wow fadeInUpBig">any successful career starts with good education</p></div>
+       	<div class="item">
+        	<h1 class="wow fadeInDownBig">Knowledge is power!</h1>
+       		<p class="wow fadeInUpBig">any successful career starts with good education</p></div>
+       	</div>
+       <a href="" class="button">Read More</a>
+    </div>
+    </div> <!--END OF HEADER-->
+    
+    <div class="welcome">
+    	<h1>Welcome</h1>
+        <hr>
+        <div class="welcomecontent">
+       	 <div class="wow bounceInLeft welcomeleft">
+        	<p>
+The value of good education cannot be underestimated. From the childhood and up to the adult age each of us tries to discover something new, have deeper knowledge of various subjects and simply learn the world better. Based on the level of your education you can earn respect and recognition in the society.</p>
+       	 </div>
+         <div class="wow bounceInUp welcomeleft">
+        	<p>You will get your future job and climb the career ladder depending on the knowledge  that you get at school, college, university, etc. Are you a fast learner? How quickly can you solve different tasks and find the tight solution of a problem? These are only some of the factors that determine your professional success.</p>
+         </div>
+         <div class="wow bounceInRight wellcomeright">
+        	<p>Such people are known to be successful not only in the professional sphere. They are also likely to have longer and happier marriages. What conclusion can we draw from everything said above? Being educated is beneficial and trendy.</p>
+         </div>
+         <div class="buton">
+         	<a href="" class="button">Read More</a>
+         </div>
+      	</div>
+    </div> <!--END OF WELCOME--> 
+    
+    <div class="program">
+    	<h1>Programs</h1>
+        <hr>
+        <div class="images">
+      	  <div class="wow fadeInDown imgtop">
+    		<div class="images1">
+        		<img src="images/post100-570x354.jpg">
+                	<div class="content">
+            			<h5>12 Des, 2012</h5>
+                        <hr>
+            			<h3><a href="">Online Education</a></h3>
+            			<p>Offering unique approach to online education.</p>
+                	</div>
+        	</div>
+        	<div class="images1">
+        		<img src="images/post200-570x354.jpg">
+                	<div class="content">
+            			<h5>25 March, 2012</h5>
+                        <hr>
+            			<h3><a href="">Progressive programs</a></h3>
+            			<p>Make the best choice for your education.</p>
+                    </div>
+        	</div>
+          </div>
+          <div class="wow fadeInUp imgbottom">
+    		<div class="images1">
+        		<img src="images/post300-570x354.jpg">
+                	<div class="content">
+            			<h5>18 Feb, 2012</h5>
+                        <hr>
+            			<h3><a href="">Clubs and organizations</a></h3>
+            			<p>Find out how to get involved.</p>
+                    </div>
+        	</div>
+        	<div class="images1">
+        		<img src="images/post400-570x354.jpg">
+                	<div class="content">
+            			<h5>11 Des, 2012</h5>
+                        <hr>
+            			<h3><a href="">Only patience & persistence</a></h3>
+            			<p>Work hard to achieve good results.</p>
+                	</div>
+       		</div>
+          </div>
+        </div>
+    
+    </div> <!--END OF PROGRAM-->
+    
+    <div class="news">
+    	<h1>Latest News</h1>
+        <hr>
+        <div class="wow fadeInUp newscontent">
+        	<div class="imgtop">
+            	<div class="img1">
+                	<div class="gambar">
+                	<img src="images/post130-370x310.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>April 29, 2015</h5>
+                            <h3><a href="">How to use music in education <hr></a></h3>
+                            <p>This is one of the most popular methods of interactive learning. Music can have different impact on different students.</p>
+                        </div>
+                </div>
+                <div class="img1">
+                	<div class="gambar1">
+                	<img src="images/post190-370x370.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>April 21, 2015</h5>
+                            <h3><a href="">Education with technologies <hr></a></h3>
+                            <p>In the age of the technological progress, we cannot avoid using the last generation gadgets in the classroom.</p>
+                        </div>
+                </div>
+                <div class="img1">
+                	<div class="gambar2">
+                	<img src="images/post150-370x290.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>March 24, 2015</h5>
+                            <h3><a href="">Gamification and Learning <hr></a></h3>
+                            <p>Today’s guide will show you how to keep students interested and involved into the process of studying.</p>
+                        </div>
+                </div>
+            	<div class="img1" id="bottom1">
+                	<div class="gambar3">
+                	<img src="images/post160-370x380.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>January 12, 2016</h5>
+                            <h3><a href="">How to become a better teacher <hr></a></h3>
+                            <p>Professional development is essential for every teacher who wants to be one step ahead.</p>
+                        </div>
+                </div>
+                <div class="img1" id="bottom2">
+                	<div class="gambar4">
+                	<img src="images/post101-370x470.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>April 21, 2015</h5>
+                            <h3><a href="">Turning Goals into reality <hr></a></h3>
+                            <p>We will teach you how to plan your future and find the right way in your life. Career planning is a part of the project.</p>
+                        </div>
+                </div>
+                <div class="img1" id="bottom3">
+                	<div class="gambar5">
+                	<img src="images/post180-370x370.jpg">
+                    </div>
+                    	<div class="cont">
+                        	<h5>March 12, 2015</h5>
+                            <h3><a href="">The nation into education <hr></a></h3>
+                            <p>The quality education that we provide ensures success after graduation. Let’s design your future career today!</p>
+                        </div>
+                </div>
+            </div>
+        	    <div class="buton">
+       	 			<a href="" class="button">Read More</a>
+        		</div>
+    	</div>
+        
+    </div> <!--END OF NEWS-->
+    
+    <div id="letter">
+    	<h1>News Letter</h1>
+        <hr>
+        <div class="subcribe">
+        <form>
+        	<input type="email" name="email" placeholder="Enter Email Address">
+            <input type="Submit" value="Subcribe">
+        </form>
+        </div>
+    </div> <!--END OF LETTER-->
+    
+    <div id="contact">
+    	<h1>Contact Us</h1>
+        <hr>
+        	<div class="hub">
+            	<div class="house">
+                	<i class="fa fa-home" aria-hidden="true"></i>
+                    <p><a href="">9863 – 9867 Mill Road,
+                    Cambridge, MG09 99HT</a></p>
+                </div>
+                <div class="phone">
+                	<i class="fa fa-mobile" aria-hidden="true"></i>
+                    <p><a href="">+1 800 603 6035</a></p>
+                </div>
+                <div class="mail">
+                	<i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <p><a href="">mail@demolink.org</a></p>
+                </div>
+             </div>
+     </div> <!--END OF contact-->
+    
+     <div class="footer">
+     	<p><a href="">Education © 2016 • Privacy Policy</a></p>
+        <div class="maps">
+        	<div id="map" style="width: 100%; height: 500px;"></div>
+			<script type="text/javascript">
+			 $(function() {
+ 			 $("#map").googleMap({
+  			 zoom: 10, // Initial zoom level (optional)
+   			 coords: [-6.1782599,106.7639031], // Map center (optional)
+    		 type: "ROADMAP" // Map type (optional)
+   				 });
+ 		 	 })
+		    </script>
+     </div>
+     </div>
+   
+  
+</body>
+</html>
